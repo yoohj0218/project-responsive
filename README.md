@@ -17,9 +17,6 @@
 * HTML
 * CSS(less/sass)
 * JavaScript(ES6), JQuery, TypeScript, (Ajax & Json)
-* React
-* PHP / My-SQL
-* Firebase(firestore database & hosting) 
 * Git & Github
 * Photoshop / Figma
 
