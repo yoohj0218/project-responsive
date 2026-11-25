@@ -1,0 +1,235 @@
+/* 와이드 pc  */
+
+	
+.videoBox{width:100%;height:100%; overflow:hidden; position:absolute;top: 0;left: 0;overflow: hidden;}
+
+#imgBG{
+	position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+   left:50%;
+   top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+   width:100%;
+   height: 100%;
+   min-width:100%; /*동영상 너비를 꽉차게*/
+   height:auto;
+   min-height:100%; /*동영상 높이를 꽉차게*/
+   transform:translateX(-50%) translateY(-50%);
+   z-index:-100;
+   object-fit: cover;
+   object-position: center;
+}
+
+.down{display: block; width: 50px;height: 100px;position: absolute;overflow: hidden;
+	 left:50%; transform: translateX(-50%); bottom: 8%;border: 1px solid #fff;border-radius: 100px;backdrop-filter: blur(5px);
+	animation:ani 1s infinite  alternate;}
+/* @keyframes ani {
+	0% { transform:scale(1); opacity:1; color:#fff;}
+	100% { transform:scale(1.2); opacity:0.8; color:#888;}
+}	 */
+a.down .scroll {
+   display: flex;
+   gap: 8px;
+   flex-direction: column;
+   align-items: center;
+   color: #fff;
+   animation: scrollMove 3s infinite;
+}
+a.down .scroll img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+@keyframes scrollMove {
+    0% {
+        transform: translateY(-35px);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(70px);
+        opacity: 0;
+    }
+}
+
+#content{ width:100%; margin:0; height:auto; background:rgba(0,0,0,.9);position: relative;padding: 150px 0;background: #111111;}
+#content h2{position: absolute; top: -350px;left: 0;
+width: 100%; text-align: center; font-size: 5em; color: #fff;font-family: "Oxanium", sans-serif;}
+
+#content h3{
+    font-size: var(--font-h3-size);
+    text-align: center;
+    margin-bottom: 100px;
+    font-family: "Oxanium", sans-serif;
+}
+#content .slogan{
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-point2);
+    font-family: "Oxanium", sans-serif;
+}
+#content .sub_txt{
+    text-align: center;
+    font-size:1.2rem;
+    margin-bottom: 50px;
+}
+#content h4{
+    font-family: "Oxanium", sans-serif;
+    font-size: 2rem;
+    color: var(--color-point1);
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+#content .swiper_in .swiper-wrapper img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+#content .swiper_in{
+    padding-bottom: 200px;
+    position: relative;
+}
+#content .swiper_in::after {
+    content: '';
+    display: block;
+    width: 75%;
+    height: 2px;
+    background: #ccc;
+    position: absolute;
+    left: 0;
+    bottom: 150px;
+}
+/* arrow */
+#content .swiper_in {
+    position: relative;
+}
+
+#content .swiper_in .arrow_box {
+    position: absolute;
+    bottom: 128px;
+    right: 10%;
+    display: flex;
+    gap: 25px;
+    z-index: 10;
+}
+
+#content .swiper_in .swiper-button-prev,
+#content .swiper_in .swiper-button-next {
+    position: static;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+#content .swiper_in .swiper-button-prev::after,
+#content .swiper_in .swiper-button-next::after {
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    color: #ccc;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all .5s ease-out;
+}
+#content .swiper_in .swiper-button-prev:hover::after,
+#content .swiper_in .swiper-button-next:hover::after{
+    background: #ccc;
+    color: #212121;
+}
+
+
+
+#content .txt_area{padding: 0 60px;}
+#content .txt_area .txt1{
+    font-size: 3.5rem;
+    font-family: "Oxanium", sans-serif;
+    font-weight: 700;
+    color: var(--color-point2);
+}
+#content .txt_area .txt2{
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+#content .txt_area .list_box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1%;
+}
+#content .txt_area .list_box .in_list{
+    width:32%;
+    border: 1px solid rgba(0, 140, 210, 0.6);
+    box-shadow:
+            0 0 5px rgba(0, 120, 200, 0.25),
+            0 0 12px rgba(0, 100, 180, 0.15),
+            inset 0 0 8px rgba(0, 100, 180, 0.08); 
+    margin-bottom: 13px;
+    padding: 20px;
+    transition: all .5s ease-out;
+}
+#content .list_box .in_list:hover{
+    border-color: #008BD2;
+    box-shadow:
+        0 0 8px rgba(0, 160, 255, 0.4),
+        0 0 20px rgba(0, 120, 220, 0.25),
+        inset 0 0 10px rgba(0, 120, 220, 0.1);
+}
+#content .list_box .in_list p{
+    color: var(--color-point3);
+    font-family: "Oxanium", sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#content .list_box .in_list .in_list2 li{
+    line-height: 1.6;
+    position: relative;
+    padding: 0 0 10px 15px;
+}
+#content .list_box .in_list .in_list2 li::before{
+    content: '';
+    display: inline;
+    width: 5px;
+    height: 5px;
+    background: var(--color-point1);
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+@media screen and (max-width:1400px){#content h4{font-size: 1.5rem;}}
+@media screen and (max-width:1280px){
+    #content h3{font-size: 4rem;}
+    #content .slogan{font-size: 2.5rem;}
+    #content .txt_area .txt1{font-size: 2.5rem;}
+    #content .txt_area {padding: 0 30px;}
+    #content .txt_area .list_box .in_list{width:48%;}
+}
+@media screen and (max-width:1024px){
+    #content .swiper_in::after{width: 65%;}
+}
+@media screen and (max-width:800px){
+    #content h3{font-size: 3rem;margin-bottom: 50px;}
+    #content .slogan {font-size: 2rem;padding: 0 5px;}
+    #content .sub_txt{font-size: 1rem;padding: 0 5px;}
+    #content .txt_area .txt1{font-size: 2rem;}
+    #content .txt_area .txt2{font-size: 1rem;}
+    #content .txt_area .list_box .in_list{width:80%;}
+    #content .swiper_in .arrow_box {bottom: 130px;}
+
+    #content .swiper_in .swiper-button-prev::after,
+    #content .swiper_in .swiper-button-next::after {font-size: 1rem;width: 40px;height: 40px;}
+}
+@media screen and (max-width:600px){
+    #content h3{font-size: 2.5rem;}
+    #content .txt_area .list_box .in_list{width:100%;}
+}
+@media screen and (max-width:480px){
+    #content .swiper_in::after{width: 55%;}
+}
